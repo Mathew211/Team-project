@@ -1,7 +1,7 @@
 # Team-project
 Autorzy : 
 - Mateusz Oliszewski
--
+- Mateusz Cyruliczek
 -
 -
 
