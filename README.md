@@ -12,7 +12,7 @@ Autorzy :
 
 Zainstalowany VSCode lub inny , link : https://code.visualstudio.com/download
 
-Pobranie node.js , link : https://nodejs.org/en/
+Pobrany node.js w przypadku testów napisanych w JS, link : https://nodejs.org/en/
 
 Instalacja freamowrku dla node.js: 
 -  npm init playwright@latest
