@@ -6,11 +6,13 @@ Autorzy :
 -
 
 
-'
 
-# Instalacja środowiska do uruchomienia testu  : 
 
-Pobranie node.js https://nodejs.org/en/
+# Instalacja środowiska potrzebna do uruchomienia testu  : 
+
+Zainstalowany VSCode lub inny , link : https://code.visualstudio.com/download
+
+Pobranie node.js , link : https://nodejs.org/en/
 
 Instalacja freamowrku dla node,js: 
 -  npm init playwright@latest
