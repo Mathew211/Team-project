@@ -71,29 +71,30 @@ export class ShopppingPage {
 
     }
 
-    async pressBuyAndgit status
-    
+    async pressBuyAndPay() {
+
+
         await this.page.getByRole('button', { name: 'Kupuję i płacę' }).click();
-await this.page.waitForTimeout(15000)
+        await this.page.waitForTimeout(15000)
 
     }
 
     async buyWithOutTicket() {
 
-    await this.navigateToHOmePage()
-    await this.choseTripToBuy()
-    await this.goToShopppignCart()
-    await this.goTOpayment()
-    await this.fillStreetInput()
-    await this.fillCityInput()
-    await this.fillPostalCode()
-    await this.fillPhoneNumber()
-    await this.fillCreditCardNumber()
-    await this.fillDateOfExpire()
-    await this.fillCVNumber()
-    await this.confrimTerms()
-    await this.pressBuyAndPay()
+        await this.navigateToHOmePage()
+        await this.choseTripToBuy()
+        await this.goToShopppignCart()
+        await this.goTOpayment()
+        await this.fillStreetInput()
+        await this.fillCityInput()
+        await this.fillPostalCode()
+        await this.fillPhoneNumber()
+        await this.fillCreditCardNumber()
+        await this.fillDateOfExpire()
+        await this.fillCVNumber()
+        await this.confrimTerms()
+        await this.pressBuyAndPay()
 
-}
+    }
 
 }
