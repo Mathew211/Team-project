@@ -2,6 +2,8 @@
     "fakestore": {
         "URL": "https://fakestore.testelka.pl/ ",
         "myAccount": ".menu-item.menu-item-201.menu-item-object-page.menu-item-type-post_type.my-account > a",
+        "addTripToShoppingCart": ".storefront-product-section.storefront-recent-products .first.has-post-thumbnail.instock.post-4116.product.product-type-simple.product_cat-windsurfing.purchasable.status-publish.taxable.type-product.virtual > .add_to_cart_button.ajax_add_to_cart.button.product_type_simple",
+        "seeShoppingCart": "a[title='Zobacz koszyk']",
         "registration": {
             "inputEmail": "input#reg_email",
             "inputPassword": "input#reg_password",
@@ -41,6 +43,27 @@
             "editMessage": "div[role='alert']",
             "editTextMessage": "Zmieniono szczegóły konta.",
             "messageColor": "rgb(15, 131, 77)"
+        },
+        "ShoppingCart": {
+            "goToPayment": ".checkout-button",
+            "streetInput": "input[name='billing_address_1']",
+            "streetName": "BakerStreet",
+            "postalCOdeInput": "input#billing_postcode",
+            "postalCOde": "51-217",
+            "cityInput": "input#billing_city",
+            "city": "New York",
+            "numberOfPhone": "input#billing_phone",
+            "phoneNumber": "123456789",
+            "numberOfCreditCard": "div#stripe-card-element",
+            "creditNumber": "4242424242424242",
+            "dateOfExpire": "div#stripe-exp-element",
+            "expireDate": "0133",
+            "CVCElement": "div#stripe-cvc-element",
+            "CVC": "333",
+            "termsInput": ".woocommerce-terms-and-conditions-checkbox-text",
+            "buyAndPay": "button#place_order",
+            "buyingWithOutTicketDoen": ".entry-title",
+            "shoppingTextMessage": "Zamówienie otrzymane"
         }
     }
 }

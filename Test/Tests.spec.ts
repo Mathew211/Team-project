@@ -2,9 +2,9 @@ import { test, expect } from '@playwright/test';
 import { chromium, BrowserContext, Page } from '@playwright/test';
 import { BeforeDoIT } from '../Page/HomePage';
 import { RegistrationPage } from '../Page/RegistrationPage';
-import { AssertionOfRegistration } from '../Assertion/RegistrationPageAssertion';
 import { AccountPage } from '../Page/AccountPage';
-import { AssertAccountPage } from '../Assertion/AccountPageAssertion';
+import { AssertShoppingPage } from '../Assertion/ShoppingCartAssert';
+import { ShopppingPage } from '../Page/ShoppingPage';
 
 test.describe('Registration page', () => {
   let browser: any;
@@ -29,15 +29,27 @@ test.describe('Registration page', () => {
 
   // });
 
-  test('Edit account ', async () => {
+  // test('Edit account ', async () => {
+
+  //   const registrationPage = new RegistrationPage(page);
+  //   await registrationPage.registrationProcess();
+  //   const editAccoutn = new AccountPage(page);
+  //   await editAccoutn.editAccount();
+  //   const assertEditAccount = new AssertAccountPage(page);
+  //   await assertEditAccount.assertEditAccount()
+
+  // });
+
+  test("Buying with out ticket", async () => {
 
     const registrationPage = new RegistrationPage(page);
     await registrationPage.registrationProcess();
     const editAccoutn = new AccountPage(page);
     await editAccoutn.editAccount();
-    const assertEditAccount = new AssertAccountPage(page);
-    await assertEditAccount.assertEditAccount()
-
+    const buyWithOutTicket = new ShopppingPage(page);
+    await buyWithOutTicket.buyWithOutTicket()
+    const withOurTicketShoppingg = new AssertShoppingPage(page)
+    await withOurTicketShoppingg.assertBuyingWithoutTicket()
   });
 
 
