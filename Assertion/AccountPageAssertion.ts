@@ -9,11 +9,17 @@ export class AssertAccountPage {
         const texMessageAfterEdit = await this.page.locator(fakestore.editAccount.editMessage).innerText()
         expect(texMessageAfterEdit).toBe(fakestore.editAccount.editTextMessage)
 
-        const messageColor = await this.page.locator(fakestore.editAccount.editMessage)
-        const colorStyle = await messageColor.evaluate((el: HTMLElement) => window.getComputedStyle(el));
-        const color = colorStyle.getPropertyValue('backgraound-color');
 
-        expect(color).toBe(fakestore.editAccount.messageColor)
+        const messageLocator = this.page.locator(fakestore.editAccount.editMessage);
+        const backgroundColorStyle = await messageLocator.evaluate((el) => {
+            const style = window.getComputedStyle(el);
+            return style.backgroundColor;
+        });
+        expect(backgroundColorStyle).toBe(fakestore.editAccount.messageColor);
+
+
+
+
 
     }
 

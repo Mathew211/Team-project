@@ -5,9 +5,31 @@ export class AccountPage {
 
     constructor(private page: Page) { }
 
+
+    async generateEmail(): Promise<string> {
+        const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        let email = '';
+
+        // Generate a random prefix of 8 characters
+        for (let i = 0; i < 8; i++) {
+            email += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+        }
+
+        // Add a random number between 1000 and 9999
+        email += Math.floor(Math.random() * 9000) + 1000;
+
+        // Add a random top-level domain
+        const tlds = ['.com', '.net', '.org'];
+        email += `@test${tlds[Math.floor(Math.random() * tlds.length)]}`;
+
+        return email;
+    }
+
     async clickEditAccount() {
 
         await this.page.locator(fakestore.accountPage.editAccount).click()
+        await this.page.waitForLoadState('networkidle')
+
 
     }
 
@@ -15,28 +37,28 @@ export class AccountPage {
 
         const name = fakestore.editAccount.name
         await this.page.locator(fakestore.editAccount.nameInput).click()
-        await this.page.locator(fakestore.editAccount.nameInput).fill("")
         await this.page.locator(fakestore.editAccount.nameInput).type(name)
+
 
     }
     async fillSurNameInput() {
-        const surName = fakestore.editAccount.surName
 
-        await this.page.locator(fakestore.editAccount.surName).click()
-        await this.page.locator(fakestore.editAccount.surName).fill("")
-        await this.page.locator(fakestore.editAccount.surName).type(surName)
+        const surName = fakestore.editAccount.surName
+        await this.page.locator(fakestore.editAccount.surnameInput).click()
+        await this.page.locator(fakestore.editAccount.surnameInput).type(surName)
+
+
     }
     async fillEmailInput() {
-        const email = fakestore.editAccount.email
+
         await this.page.locator(fakestore.editAccount.emailInput).click()
         await this.page.locator(fakestore.editAccount.emailInput).fill("")
-        await this.page.locator(fakestore.editAccount.emailInput).type(email)
+        await this.page.locator(fakestore.editAccount.emailInput).type(await this.generateEmail())
 
     }
     async fillDisplayedName() {
         const displayName = fakestore.editAccount.displayedName
         await this.page.locator(fakestore.editAccount.baseName).click()
-        await this.page.locator(fakestore.editAccount.baseName).fill("")
         await this.page.locator(fakestore.editAccount.baseName).type(displayName)
 
     }
@@ -44,7 +66,6 @@ export class AccountPage {
     async fillCurrentPassword() {
         const password = fakestore.registration.password
         await this.page.locator(fakestore.editAccount.currentPassword).click()
-        await this.page.locator(fakestore.editAccount.currentPassword).fill("")
         await this.page.locator(fakestore.editAccount.currentPassword).type(password)
 
     }
@@ -54,7 +75,6 @@ export class AccountPage {
 
         const password = fakestore.editAccount.fillNewPassword
         await this.page.locator(fakestore.editAccount.newPassword).click()
-        await this.page.locator(fakestore.editAccount.newPassword).fill("")
         await this.page.locator(fakestore.editAccount.newPassword).type(password)
 
     }
@@ -62,8 +82,8 @@ export class AccountPage {
 
         const password = fakestore.editAccount.fillNewPassword
         await this.page.locator(fakestore.editAccount.repetNewPassword).click()
-        await this.page.locator(fakestore.editAccount.repetNewPassword).fill("")
         await this.page.locator(fakestore.editAccount.repetNewPassword).type(password)
+
     }
     async confrimChanges() {
 
@@ -71,18 +91,15 @@ export class AccountPage {
     }
 
     async editAccount() {
-        this.clickEditAccount()
-        this.fillNameInput()
-        this.fillSurNameInput()
-        this.fillEmailInput()
-        this.fillDisplayedName()
-        this.fillCurrentPassword()
-        this.fillNewPassword()
-        this.repetPassword()
-        this.confrimChanges()
-
-
-
+        await this.clickEditAccount()
+        await this.fillNameInput()
+        await this.fillSurNameInput()
+        await this.fillEmailInput()
+        await this.fillDisplayedName()
+        await this.fillCurrentPassword()
+        await this.fillNewPassword()
+        await this.repetPassword()
+        await this.confrimChanges()
 
     }
 
