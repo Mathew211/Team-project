@@ -1,0 +1,46 @@
+{
+    "fakestore": {
+        "URL": "https://fakestore.testelka.pl/ ",
+        "myAccount": ".menu-item.menu-item-201.menu-item-object-page.menu-item-type-post_type.my-account > a",
+        "registration": {
+            "inputEmail": "input#reg_email",
+            "inputPassword": "input#reg_password",
+            "registerNow": "button[name='register']",
+            "password": "Test123!!"
+        },
+        "accountPage": {
+            "accountTile": "Moje konto – FakeStore",
+            "welcomeMessage": ".entry-title",
+            "WelomeTextMessage": "Moje konto",
+            "cocpit": ".woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link-- > a",
+            "cocpitName": "Kokpit",
+            "myOrder": ".woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--orders > a",
+            "myOrderName": "Moje zamówienia",
+            "editAccount": ".woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--edit-account > a",
+            "editAccountName": "Edycja konta",
+            "address": ".woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--edit-address > a",
+            "addressName": "Adres",
+            "logOut": ".woocommerce-MyAccount-navigation-link--customer-logout [href]",
+            "logOutName": "Wyloguj"
+        },
+        "editAccount": {
+            "nameInput": "[autocomplete='given-name']",
+            "name": "Test123",
+            "surnameInput": "[autocomplete='family-name']",
+            "surName": "Test123",
+            "baseName": "input#account_display_name",
+            "displayedName": "Test Test",
+            "emailInput": "input#account_email",
+            "email": "test@test.test",
+            "currentPassword": "input#password_current",
+            "fillCurrentPassword": "Test123!!",
+            "newPassword": "input[name='password_1']",
+            "fillNewPassword": "Qwerty123!!",
+            "repetNewPassword": "input[name='password_2']",
+            "confirmChanges": "button[name='save_account_details']",
+            "editMessage": "div[role='alert']",
+            "editTextMessage": "Zmieniono szczegóły konta.",
+            "messageColor": "'rgb(255, 0, 0)'"
+        }
+    }
+}
