@@ -46,10 +46,10 @@ export class ShopppingPage {
         await this.page.locator(fakestore.ShoppingCart.numberOfPhone).type(fakestore.ShoppingCart.phoneNumber)
 
     }
-    async fillCreditCardNumber() {
+    async fillCreditCardNumber(number: string) {
 
         await this.page.locator(fakestore.ShoppingCart.numberOfCreditCard).click()
-        await this.page.locator(fakestore.ShoppingCart.numberOfCreditCard).type(fakestore.ShoppingCart.creditNumber)
+        await this.page.locator(fakestore.ShoppingCart.numberOfCreditCard).type(number)
 
     }
     async fillDateOfExpire() {
@@ -79,7 +79,50 @@ export class ShopppingPage {
 
     }
 
-    async buyWithOutTicket() {
+    async usingPromoCodeNo1() {
+
+        await this.page.locator(fakestore.ShoppingCart.promoCodeInput).click()
+        await this.page.locator(fakestore.ShoppingCart.promoCodeInput).type(fakestore.ShoppingCart.promoCodeNo1)
+        await this.page.waitForLoadState('networkidle')
+    }
+
+    async usingPromoCodeNo2() {
+
+        await this.page.locator(fakestore.ShoppingCart.promoCodeInput).click()
+        await this.page.locator(fakestore.ShoppingCart.promoCodeInput).type(fakestore.ShoppingCart.promoCodeNo2)
+        await this.page.waitForLoadState('networkidle')
+    }
+    async usingPromoCodeNo3() {
+
+        await this.page.locator(fakestore.ShoppingCart.promoCodeInput).click()
+        await this.page.locator(fakestore.ShoppingCart.promoCodeInput).type(fakestore.ShoppingCart.promoCodeNo3)
+        await this.page.waitForLoadState('networkidle')
+    }
+
+
+    async usingPromoCodeNo4() {
+
+        await this.page.locator(fakestore.ShoppingCart.promoCodeInput).click()
+        await this.page.locator(fakestore.ShoppingCart.promoCodeInput).type(fakestore.ShoppingCart.promoCodeNo4)
+        await this.page.waitForLoadState('networkidle')
+    }
+
+    async clickConfirmPromoCode() {
+
+        await this.page.locator(fakestore.ShoppingCart.confirmPromoCode).click()
+
+    }
+
+
+
+    async cleanAfterAssertion() {
+
+        await this.page.locator(fakestore.ShoppingCart.removeFromShoppingCart).click()
+        await this.page.locator(fakestore.ShoppingCart.backToSHop).click()
+
+    }
+
+    async buyWithOutTicket(number) {
 
         await this.navigateToHOmePage()
         await this.choseTripToBuy()
@@ -89,12 +132,60 @@ export class ShopppingPage {
         await this.fillCityInput()
         await this.fillPostalCode()
         await this.fillPhoneNumber()
-        await this.fillCreditCardNumber()
+        await this.fillCreditCardNumber(number)
         await this.fillDateOfExpire()
         await this.fillCVNumber()
         await this.confrimTerms()
         await this.pressBuyAndPay()
 
     }
+
+    async usingPormoCode() {
+
+        await this.navigateToHOmePage()
+        await this.choseTripToBuy()
+        await this.goToShopppignCart()
+        await this.usingPromoCodeNo1()
+        await this.clickConfirmPromoCode()
+
+    }
+
+    async usingPormoCode2() {
+
+        await this.navigateToHOmePage()
+        await this.choseTripToBuy()
+        await this.goToShopppignCart()
+        await this.usingPromoCodeNo1()
+        await this.clickConfirmPromoCode()
+        await this.usingPromoCodeNo2()
+        await this.clickConfirmPromoCode()
+
+    }
+
+    async linkingPromoCodeIsImpossible() {
+
+        await this.navigateToHOmePage()
+        await this.choseTripToBuy()
+        await this.goToShopppignCart()
+        await this.usingPromoCodeNo4()
+        await this.clickConfirmPromoCode()
+        await this.usingPromoCodeNo1()
+        await this.clickConfirmPromoCode()
+
+    }
+
+
+    async proomoCodeExpire() {
+
+        await this.navigateToHOmePage()
+        await this.choseTripToBuy()
+        await this.goToShopppignCart()
+        await this.usingPromoCodeNo3()
+        await this.clickConfirmPromoCode()
+
+
+    }
+
+
 
 }

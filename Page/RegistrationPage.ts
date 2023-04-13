@@ -31,6 +31,18 @@ export class RegistrationPage {
     async fillEmail() {
         await this.page.locator(fakestore.registration.inputEmail).type(await this.generateEmail())
     }
+    async fillLoginEmail() {
+        await this.page.locator(fakestore.accountPage.inputEmailLogin).type(fakestore.accountPage.login)
+    }
+    async fillLoginPassword(): Promise<void> {
+        await this.page.locator(fakestore.accountPage.inputPasswordLogin).type(fakestore.accountPage.password)
+    }
+    async clickLogIn() {
+
+        await this.page.locator(fakestore.accountPage.loginButton).click()
+        await this.page.waitForLoadState("networkidle")
+
+    }
 
     async fiillPassword() {
 
@@ -46,12 +58,25 @@ export class RegistrationPage {
 
     }
 
+    async logOut() {
+        await this.page.locator(fakestore.accountPage.logOut).click()
+    }
+
     async registrationProcess() {
 
         await this.clickOnMyAccount()
         await this.fillEmail()
         await this.fiillPassword()
         await this.clickRegisterNow()
+
+    }
+
+    async logIn() {
+
+        await this.clickOnMyAccount()
+        await this.fillLoginEmail()
+        await this.fillLoginPassword()
+        await this.clickLogIn()
 
     }
 

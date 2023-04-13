@@ -90,7 +90,11 @@ export class AccountPage {
         await this.page.locator(fakestore.editAccount.confirmChanges).click()
     }
 
+    async logOut() {
+        await this.page.locator(fakestore.accountPage.logOut).click()
+    }
     async editAccount() {
+
         await this.clickEditAccount()
         await this.fillNameInput()
         await this.fillSurNameInput()

@@ -23,7 +23,12 @@
             "address": ".woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--edit-address > a",
             "addressName": "Adres",
             "logOut": ".woocommerce-MyAccount-navigation-link--customer-logout [href]",
-            "logOutName": "Wyloguj"
+            "logOutName": "Wyloguj",
+            "inputEmailLogin": "input#username",
+            "login": "testlogin@test.com",
+            "inputPasswordLogin": "input#password",
+            "password": "Testy123!!",
+            "loginButton": "button[name='login']"
         },
         "editAccount": {
             "nameInput": "input#account_first_name",
@@ -56,6 +61,7 @@
             "phoneNumber": "123456789",
             "numberOfCreditCard": "div#stripe-card-element",
             "creditNumber": "4242424242424242",
+            "creditRejectNumber": "4000 0000 0000 0002",
             "dateOfExpire": "div#stripe-exp-element",
             "expireDate": "0133",
             "CVCElement": "div#stripe-cvc-element",
@@ -63,7 +69,37 @@
             "termsInput": ".woocommerce-terms-and-conditions-checkbox-text",
             "buyAndPay": "button#place_order",
             "buyingWithOutTicketDoen": ".entry-title",
-            "shoppingTextMessage": "Zamówienie otrzymane"
+            "shoppingTextMessage": "Zamówienie otrzymane",
+            "promoCodeInput": "input#coupon_code",
+            "confirmPromoCode": "button[name='apply_coupon']",
+            "promoCodeNo1": "10procent",
+            "nameOfPromoCodeNo1": ".cart-discount.coupon-10procent > th",
+            "nameOfPromoCodeNo1Text": "Kupon: 10procent",
+            "promoCodeNo2": "kwotowy300",
+            "nameOfPromoCodeNo2": ".cart-discount.coupon-kwotowy300 > th",
+            "nameOfPromoCodeNo2Text": "Kupon: kwotowy300",
+            "promoCodeNo3": "starośćnieradość ",
+            "promoCodeNo4": "kwotowy250pojedynczy",
+            "promoCodeAccepted": "div[role='alert']",
+            "promoCodeAcceptedMessage": "Kupon został pomyślnie użyty.",
+            "removeFromShoppingCart": ".remove",
+            "backToSHop": ".button.wc-backward",
+            "shoppingCartAlert": "ul[role='alert'] > li",
+            "linikingIsImposibleMessage": "Przepraszamy, kupon \"kwotowy250pojedynczy\" został już użyty nie może być powiązany z innymi kuponami.",
+            "promoCodeExpireMessage": "Ten kupon stracił ważność.",
+            "creditCardRejectMessage": "Karta została odrzucona."
+        },
+        "wishlist": {
+            "product": ".storefront-product-section.storefront-recent-products  .columns-4.products > .first.has-post-thumbnail.instock.post-4116.product.product-type-simple.product_cat-windsurfing.purchasable.status-publish.taxable.type-product.virtual > .woocommerce-LoopProduct-link.woocommerce-loop-product__link > .woocommerce-loop-product__title",
+            "addToWishList": ".add_to_wishlist.single_add_to_wishlist > span",
+            "browsingWIshList": ".yith-wcwl-wishlistaddedbrowse > a[rel='nofollow']",
+            "productName": "[data-row-id] .product-name",
+            "productNameText": "Windsurfing w Lanzarote (Costa Teguise)",
+            "removeFromWishList": "a[title='Usuń']",
+            "removeMessage": "form#yith-wcwl-form > div[role='alert']",
+            "removeTextMessage": "Produkt został usunięty.",
+            "myWIshList": "h2",
+            "myWishListText": "Moja lista życzeń:"
         }
     }
 }
