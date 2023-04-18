@@ -100,6 +100,16 @@
             "removeTextMessage": "Produkt został usunięty.",
             "myWIshList": "h2",
             "myWishListText": "Moja lista życzeń:"
+        },
+        "searchhing": {
+            "searchInput": "header#masthead form[role='search'] > input[name='s']",
+            "searchedProduct": ".entry-title.product_title",
+            "textOne": "Windsurfing w Lanzarote (Costa Teguise)",
+            "textTwo": "','",
+            "textThree": "Win",
+            "notFoundMessage": "main#main > .woocommerce-info.woocommerce-no-products-found",
+            "notFoundMessageText": "Nie znaleziono produktów, których szukasz.",
+            "moreThanOneTripFound": ".woocommerce-loop-product__title"
         }
     }
 }

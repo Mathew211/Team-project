@@ -9,4 +9,8 @@ export class BeforeDoIT {
         await this.page.goto(fakestore.URL)
     }
 
+    async reload() {
+        await this.page.reload()
+    }
+
 }
