@@ -24,6 +24,9 @@ export class AccountPage {
 
         return email;
     }
+    async clickOnMyAccount() {
+        await this.page.locator(fakestore.myAccount).click()
+    }
 
     async clickEditAccount() {
 
@@ -93,6 +96,44 @@ export class AccountPage {
     async logOut() {
         await this.page.locator(fakestore.accountPage.logOut).click()
     }
+
+    async fillLogin() {
+        await this.page.locator(fakestore.accountPage.inputEmailLogin).fill(fakestore.accountPage.login)
+    }
+    async fillPassword() {
+        await this.page.locator(fakestore.accountPage.inputPasswordLogin).fill(fakestore.accountPage.password)
+
+    }
+    async fillIncorrectLogin() {
+        await this.page.locator(fakestore.accountPage.inputEmailLogin).fill(fakestore.accountPage.incorrectLogin)
+    }
+    async fillIncorrectPassword() {
+        await this.page.locator(fakestore.accountPage.inputPasswordLogin).fill(fakestore.accountPage.incorrectPassword)
+
+    }
+    async clickLoginButton() {
+        await this.page.locator(fakestore.accountPage.loginButton).click()
+
+    }
+
+    async incorrectLogin() {
+
+        await this.clickOnMyAccount()
+        await this.fillIncorrectLogin()
+        await this.fillIncorrectPassword()
+        await this.clickLoginButton()
+
+    }
+    async login() {
+
+        await this.clickOnMyAccount()
+        await this.fillLogin()
+        await this.fillPassword()
+        await this.clickLoginButton()
+
+    }
+
+
     async editAccount() {
 
         await this.clickEditAccount()

@@ -28,7 +28,11 @@
             "login": "testlogin@test.com",
             "inputPasswordLogin": "input#password",
             "password": "Testy123!!",
-            "loginButton": "button[name='login']"
+            "loginButton": "button[name='login']",
+            "incorrectLogin": "qwert",
+            "incorrectPassword": "qwerase",
+            "incorrectLoginMessage": "ul[role='alert'] > li",
+            "incorrectLoginTextMessage": "Błąd: Brak qwert wśród zarejestrowanych w witrynie użytkowników. Jeśli nie masz pewności co do nazwy użytkownika, użyj adresu e-mail."
         },
         "editAccount": {
             "nameInput": "input#account_first_name",
