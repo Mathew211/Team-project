@@ -13,6 +13,8 @@ import { WishListAssertion } from '../Assertion/WishListAssertion';
 import { SearchingPage } from '../Page/SearchingPage';
 import { SearchingAssertion } from '../Assertion/SearchingAssertion';
 
+
+
 test.describe('Registration page', () => {
   let browser: any;
   let context: BrowserContext;
@@ -162,11 +164,5 @@ test.describe('Registration page', () => {
     await assertSearching.assertWhenSearchingReturnNothing()
     await doIt.reload()
   })
-
-
-
-
-
-
 
 });
